@@ -1,9 +1,6 @@
 package algorithm.sort;
 
-import algorithm.sort.startegy.BubbleStrategy;
-import algorithm.sort.startegy.MergeStrategy;
-import algorithm.sort.startegy.QuickStrategy;
-import algorithm.sort.startegy.SortStrategy;
+import algorithm.sort.startegy.*;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -26,6 +23,11 @@ public class ArraySorterTest {
   @DisplayName("퀵 소트")
   void quickSort() {
     sortTest(new QuickStrategy());
+  }
+  @Test
+  @DisplayName("셀렉션 소트")
+  void selectionSort() {
+    sortTest(new SelectionStrategy());
   }
 
   private void sortTest(SortStrategy sortStrategy) {
