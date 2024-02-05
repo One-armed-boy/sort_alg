@@ -1,6 +1,8 @@
 package algorithm.sort;
 
 import algorithm.sort.startegy.BubbleStrategy;
+import algorithm.sort.startegy.MergeStrategy;
+import algorithm.sort.startegy.SortStrategy;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -12,9 +14,18 @@ public class ArraySorterTest {
   @Test
   @DisplayName("버블 소트")
   void bubbleSort() {
+    sortTest(new BubbleStrategy());
+  }
+  @Test
+  @DisplayName("머지 소트")
+  void mergeSort() {
+    sortTest(new MergeStrategy());
+  }
+
+  private void sortTest(SortStrategy sortStrategy) {
     // given
-    int[] testArr = getRandomArrForTest(10, 0, 20);
-    arrSorter.setSortStrategy(new BubbleStrategy());
+    int[] testArr = getRandomArrForTest(1000, 0, 10000);
+    arrSorter.setSortStrategy(sortStrategy);
 
     // when
     arrSorter.sort(testArr);
