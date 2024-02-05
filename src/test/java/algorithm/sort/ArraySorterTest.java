@@ -2,6 +2,7 @@ package algorithm.sort;
 
 import algorithm.sort.startegy.BubbleStrategy;
 import algorithm.sort.startegy.MergeStrategy;
+import algorithm.sort.startegy.QuickStrategy;
 import algorithm.sort.startegy.SortStrategy;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
@@ -21,10 +22,15 @@ public class ArraySorterTest {
   void mergeSort() {
     sortTest(new MergeStrategy());
   }
+  @Test
+  @DisplayName("퀵 소트")
+  void quickSort() {
+    sortTest(new QuickStrategy());
+  }
 
   private void sortTest(SortStrategy sortStrategy) {
     // given
-    int[] testArr = getRandomArrForTest(1000, 0, 10000);
+    int[] testArr = getRandomArrForTest(50000, 0, 1234567891);
     arrSorter.setSortStrategy(sortStrategy);
 
     // when
