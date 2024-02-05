@@ -1,6 +1,6 @@
 package algorithm.sort.startegy;
 
-public class BubbleStrategy implements SortStrategy {
+public class BubbleStrategy implements SwapSortStrategy {
   @Override
   public void sort(int[] arr) {
     for (int lastIdx = arr.length - 1; lastIdx > 0; lastIdx --) {
@@ -11,11 +11,5 @@ public class BubbleStrategy implements SortStrategy {
         swap(arr, idx, idx+1);
       }
     }
-  }
-
-  private void swap(int[] arr, int idx1, int idx2) {
-    int tmp1 = arr[idx1];
-    arr[idx1] = arr[idx2];
-    arr[idx2] = tmp1;
   }
 }
