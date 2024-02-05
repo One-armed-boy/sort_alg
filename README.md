@@ -5,3 +5,6 @@
 ```shell
 ./gradlew clean test
 ```
+
+### 결과 확인
+`./build/reports/tests/test/index.html` 파일을 웹 브라우저로 열기 
