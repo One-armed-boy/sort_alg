@@ -10,24 +10,29 @@ import java.util.Arrays;
 public class ArraySorterTest {
   private ArraySorter arrSorter = new ArraySorter();
   @Test
-  @DisplayName("버블 소트")
+  @DisplayName("버블 정렬")
   void bubbleSort() {
     sortTest(new BubbleStrategy());
   }
   @Test
-  @DisplayName("머지 소트")
+  @DisplayName("병합 정렬")
   void mergeSort() {
     sortTest(new MergeStrategy());
   }
   @Test
-  @DisplayName("퀵 소트")
+  @DisplayName("퀵 정렬")
   void quickSort() {
     sortTest(new QuickStrategy());
   }
   @Test
-  @DisplayName("셀렉션 소트")
+  @DisplayName("선택 정렬")
   void selectionSort() {
     sortTest(new SelectionStrategy());
+  }
+  @Test
+  @DisplayName("삽입 정렬")
+  void insertionSort() {
+    sortTest(new InsertionStrategy());
   }
 
   private void sortTest(SortStrategy sortStrategy) {
